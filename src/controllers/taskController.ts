@@ -1,6 +1,7 @@
 //import { Agent } from "../models/Agent";
 import { Request, Response } from "express";
-import { Task, TaskStatus } from "ykd-base/sugar.ts";
+
+import { Task, TaskStatus } from "ykd-base/compile";
 import { collection } from "../models/TaskDAO";
 
 import { sendAgent } from "../server/agentServer";

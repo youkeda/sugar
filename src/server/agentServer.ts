@@ -1,4 +1,4 @@
-import { Task, Agent, AgentStatus, Message } from "ykd-base/sugar";
+import { Task, Agent, AgentStatus, Message } from "ykd-base/compile";
 
 import { findWaitAgent, update as updateAgent } from "../models/AgentDAO";
 import { update as updateTask } from "../models/TaskDAO";

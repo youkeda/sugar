@@ -1,6 +1,6 @@
 import { mongo } from "../mongo";
 
-import {Agent,AgentStatus} from "ykd-base/sugar";
+import {Agent,AgentStatus} from "ykd-base/compile";
 
 
 export const collection = function() {

@@ -43,7 +43,7 @@
     "request-promise": "^4.2.4",
     "socket.io": "^2.3.0",
     "winston": "^3.2.1",
-    "ykd-base": "^1.12.2"
+    "ykd-base": "1.12.3"
   },
   "devDependencies": {
     "@types/async": "^3.0.2",

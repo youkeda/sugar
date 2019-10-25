@@ -1,6 +1,6 @@
 import { collection } from "../models/TaskDAO";
 
-import {Task,TaskStatus,Message} from "ykd-base/sugar";
+import {Task,TaskStatus,Message} from "ykd-base/compile";
 
 
 import { sendAgent } from "./agentServer";
