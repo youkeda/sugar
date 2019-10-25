@@ -2,7 +2,7 @@
 import { Request, Response } from "express";
 
 import { Task, TaskStatus } from "ykd-base/compile";
-import { collection } from "../models/TaskDAO";
+import { collection } from "../dao/TaskDAO";
 
 import { sendAgent } from "../server/agentServer";
 

@@ -1,4 +1,4 @@
-import { collection } from "../models/TaskDAO";
+import { collection } from "../dao/TaskDAO";
 
 import {Task,TaskStatus,Message} from "ykd-base/compile";
 

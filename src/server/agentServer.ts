@@ -1,7 +1,7 @@
-import { Task, Agent, AgentStatus, Message } from "ykd-base/compile";
+import { Task, Agent, AgentStatus } from "ykd-base/compile";
 
-import { findWaitAgent, update as updateAgent } from "../models/AgentDAO";
-import { update as updateTask } from "../models/TaskDAO";
+import { findWaitAgent, update as updateAgent } from "../dao/AgentDAO";
+import { update as updateTask } from "../dao/TaskDAO";
 const socketCache: any = {};
 
 export async function sendAgent(task: Task) {
