@@ -1,0 +1,11 @@
+{
+  "resourceType": "gz",
+  "resourceUrl": "https://qgt-style.oss-cn-hangzhou.aliyuncs.com/img/ham/course/j2/hello.tar.gz",
+  "steps": [
+    {
+      "name": "编译",
+      "commands": ["mvn package"]
+    }
+  ],
+  "status": "created"
+}
