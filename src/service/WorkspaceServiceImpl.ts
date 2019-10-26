@@ -16,6 +16,8 @@ export {
   TemplateWorkspace
 };
 
+import { findOneWorkspace, saveWorkspace } from "../dao/WorkspaceDAO";
+
 class WorkspaceServiceImpl implements WorkspaceService {
   init(
     workspaceId: string,
@@ -23,10 +25,16 @@ class WorkspaceServiceImpl implements WorkspaceService {
     accountId: string,
     templateId: string
   ): Promise<Workspace> {
-    return new Promise((resolve, reject) => {
-
-      
-
+    return new Promise(async (resolve, reject) => {
+      let workspace = <Workspace>{
+        workspaceId,
+        accountId
+      };
+      let result = await findOneWorkspace(workspace);
+      if (result) {
+        resolve(result);
+        return;
+      }
     });
   }
   save(workspace: Workspace): Promise<void> {
