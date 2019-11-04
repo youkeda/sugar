@@ -1,7 +1,6 @@
 import { mongo } from "../mongo";
 
-import {Agent,AgentStatus} from "ykd-base/compile";
-
+import { Agent, AgentStatus } from "../types/compile";
 
 export const collection = function() {
   return mongo.db.collection("sugar_agents");

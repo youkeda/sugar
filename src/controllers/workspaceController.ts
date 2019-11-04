@@ -1,7 +1,6 @@
 //import { Agent } from "../models/Agent";
 import { Request, Response, Express } from "express";
 
-import { findOneWorkspace, saveWorkspace } from "../dao/WorkspaceDAO";
 
 /**
  * GET /login
@@ -10,14 +9,9 @@ import { findOneWorkspace, saveWorkspace } from "../dao/WorkspaceDAO";
 export const init = async (req: Request, res: Response) => {
   const workspace = req.body;
 
-  let result = await findOneWorkspace(workspace);
 
-  if (!result) {
-    await saveWorkspace(workspace);
-    result = await findOneWorkspace(workspace);
-  }
 
-  res.json(result);
+  res.json({});
 };
 
 export default (app: Express) => {

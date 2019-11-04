@@ -1,7 +1,7 @@
 import { mongo } from "../mongo";
 import { Collection, ObjectID } from "mongodb";
 
-import {Task} from "ykd-base/compile";
+import { Task } from "../types/compile";
 
 export const collection = function(): Collection {
   return mongo.db.collection("sugar_tasks");
