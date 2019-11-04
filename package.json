@@ -11,7 +11,7 @@
   "scripts": {
     "start": "npm run serve",
     "build": "npm run build-ts && npm run lint",
-    "serve": "node dist/server.js",
+    "serve": "node src/server.js",
     "watch-node": "nodemon dist/src/server.js",
     "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
     "test": "jest --detectOpenHandles --forceExit --coverage --verbose",
@@ -25,10 +25,8 @@
     "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\"  \"npm run watch-ts\" \"npm run serve-debug\""
   },
   "dependencies": {
-    "@types/ali-oss": "^6.0.4",
     "@types/mongodb": "^3.3.6",
     "@types/socket.io": "^2.1.4",
-    "ali-oss": "^6.1.1",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "dotenv": "^8.1.0",
@@ -42,8 +40,7 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "socket.io": "^2.3.0",
-    "winston": "^3.2.1",
-    "ykd-base": "1.12.3"
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "@types/async": "^3.0.2",

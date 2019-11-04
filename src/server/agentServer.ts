@@ -1,4 +1,4 @@
-import { Task, Agent, AgentStatus } from "ykd-base/compile";
+import { Task, Agent, AgentStatus } from "../types/compile";
 
 import { findWaitAgent, update as updateAgent } from "../dao/AgentDAO";
 import { update as updateTask } from "../dao/TaskDAO";
@@ -21,7 +21,7 @@ export async function sendAgent(task: Task) {
 export function initAgent(io: SocketIO.Server) {
   io.of("/agent").on("connection", function(socket: SocketIO.Socket) {
     socketCache[socket.id] = socket;
-
+    console.log(socket.id);
     socket.emit("onRegister", true);
 
     let agent: Agent;
@@ -36,6 +36,7 @@ export function initAgent(io: SocketIO.Server) {
       updateTask(msg);
     });
     socket.on("disconnect", function() {
+      console.log(socket.id,"disconnected");
       delete socketCache[socket.id];
 
       updateAgent({
