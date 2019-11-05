@@ -1,7 +1,6 @@
 import { collection } from "../dao/TaskDAO";
 
-import {Task,TaskStatus,Message} from "../types/compile";
-
+import { Task, TaskStatus, Message } from "../types/compile";
 
 import { sendAgent } from "./agentServer";
 
@@ -15,8 +14,12 @@ export function initBrowser(io: SocketIO.Server) {
     });
 
     //离开房间
-    socket.on("run_app_completed",function(taskId: string){
-        socket.leave(taskId);
+    socket.on("run_app_completed", function(taskId: string) {
+      socket.leave(taskId);
+    });
+
+    socket.on("reConnect", function(taskId: string) {
+      socket.join(taskId);
     });
 
     socket.on("run_app", function(task: Task) {

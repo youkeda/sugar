@@ -3,6 +3,7 @@ import path from "path";
 import express from "express";
 import compression from "compression"; // compresses requests
 import bodyParser from "body-parser";
+import cors from  "cors";
 import { MONGODB_URI } from "./util/secrets";
 
 import { mongo } from "./mongo";
@@ -15,6 +16,9 @@ import * as agentController from "./controllers/workspaceController";
 
 // Create Express server
 const app = express();
+
+app.use(cors())
+
 
 // Express configuration
 app.set("port", process.env.PORT || 3000);

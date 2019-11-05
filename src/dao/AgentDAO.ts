@@ -22,7 +22,7 @@ export const findWaitAgent = async () => {
 
 export const update = function(agent: Agent) {
   collection().findOneAndUpdate(
-    { mac: agent.mac },
+    { sid: agent.sid },
     {
       $set: { ...agent, updatedAt: new Date() },
       $setOnInsert: {
@@ -34,4 +34,8 @@ export const update = function(agent: Agent) {
       //console.log(r);
     }
   );
+};
+
+export const delAgent = function(sid: string) {
+  collection().deleteOne({ sid });
 };
