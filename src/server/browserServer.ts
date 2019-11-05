@@ -13,8 +13,12 @@ export function initBrowser(io: SocketIO.Server) {
       socket.to(msg.taskId).emit("run_app_log", msg);
     });
 
-    //离开房间
-    socket.on("run_app_completed", function(taskId: string) {
+    socket.on("completed", function(taskId: string) {
+      socket.to(taskId).emit("run_app_completed", taskId);
+    });
+
+    socket.on("close_task", function(taskId: string) {
+      //离开房间
       socket.leave(taskId);
     });
 
